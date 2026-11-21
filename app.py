@@ -18,7 +18,7 @@ if not os.path.exists(config_path):
             'font = "sans serif"\n'
         )
 
-# 2. Configuración responsive de la página (se adapta a celular y PC)
+# 2. Configuración responsive de la página
 st.set_page_config(
     page_title="Programación y Robótica",
     page_icon="🤖",
@@ -66,7 +66,8 @@ proyectos = [
     {
         "materia": "Robótica",
         "titulo": "🦾 Brazo Robótico en 3D",
-        "desc": "Ensamblamos y controlamos un brazo articulado impreso en 3D, utilizando servomotores para lograr movimientos precisos de rotación y agarre."
+        "desc": "Ensamblamos y controlamos un brazo articulado impreso en 3D, utilizando servomotores para lograr movimientos precisos de rotación y agarre.",
+        "imagen": "https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?auto=format&fit=crop&w=800&q=80"
     },
     {
         "materia": "Robótica",
@@ -84,7 +85,7 @@ opcion = st.radio(
 
 st.write("")
 
-# Cuadrícula responsive (Streamlit apila las columnas automáticamente en celulares)
+# Mostrar tarjetas informativas en columnas (responsive)
 filtrados = proyectos if opcion == "Todos" else [p for p in proyectos if p["materia"] == opcion]
 columnas = st.columns(2)
 
@@ -94,6 +95,8 @@ for indice, item in enumerate(filtrados):
             st.caption(f"ÁREA: {item['materia'].upper()}")
             st.markdown(f"### {item['titulo']}")
             st.write(item["desc"])
+            if "imagen" in item:
+                st.image(item["imagen"], caption="Prototipo del Brazo Robótico en 3D", use_container_width=True)
 
 st.divider()
 
@@ -130,7 +133,6 @@ st.write("Escanea este código QR para abrir el portafolio en pantalla responsiv
 col_qr_info, col_qr_img = st.columns([2, 1])
 
 with col_qr_info:
-    # Detecta automáticamente la URL pública cuando esté subida a Streamlit Cloud
     url_actual = st.context.url if hasattr(st.context, "url") and st.context.url else ""
     url_destino = st.text_input(
         "Enlace público de la página web:",
