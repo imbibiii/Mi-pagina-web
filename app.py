@@ -67,7 +67,7 @@ proyectos = [
         "materia": "Robótica",
         "titulo": "🦾 Brazo Robótico en 3D",
         "desc": "Ensamblamos y controlamos un brazo articulado impreso en 3D, utilizando servomotores para lograr movimientos precisos de rotación y agarre.",
-        "imagen": "https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?auto=format&fit=crop&w=800&q=80"
+        "imagen": "foto.jpg"
     },
     {
         "materia": "Robótica",
