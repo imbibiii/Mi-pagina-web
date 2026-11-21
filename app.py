@@ -57,7 +57,6 @@ proyectos = [
         "materia": "Programación",
         "titulo": "🚗 Programación de Carrito",
         "desc": "Implementamos la lógica de movimiento, control de dirección y velocidad para desplazar un vehículo digital mediante comandos."
-         "imagen": "foto2.jpg"
     },
     {
         "materia": "Robótica",
